@@ -1,0 +1,18 @@
+#Abstract class for Payment System
+from abc import ABC,abstractmethod
+class payment(ABC):
+    @abstractmethod
+    def make_payment(self,amount):
+        pass
+#concrete cls-1
+class creditcard(payment):
+    def make_payment(self, amount):
+        print(f"paid {amount} using credit card")
+#concrete cls-2
+class phnpay(payment):
+    def make_payment(self,amount):
+        print(f"paid {amount} using phonepay")
+obj1=creditcard()
+obj2=phnpay()
+obj1.make_payment(2000)
+obj2.make_payment(3000)
